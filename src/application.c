@@ -23,6 +23,8 @@ uint16_t button_click_count = 0;
 
 twr_scheduler_task_id_t send_data_task_id;
 
+struct tm datetime;
+
 // Button event callback
 void button_event_handler(twr_button_t *self, twr_button_event_t event, void *event_param)
 {
@@ -74,6 +76,19 @@ void send_data_task()
 // Application initialization function which is called once after boot
 void application_init(void)
 {
+
+    /*struct tm datetime;
+
+    datetime.tm_hour = 12;
+    datetime.tm_min = 43;
+    datetime.tm_sec = 00;
+
+    datetime.tm_mon = 03;
+    datetime.tm_mday = 20;
+    datetime.tm_year = 123;
+
+    twr_rtc_set_datetime(&datetime, 0);*/
+
     // Initialize logging
     twr_log_init(TWR_LOG_LEVEL_DUMP, TWR_LOG_TIMESTAMP_ABS);
 
@@ -101,4 +116,7 @@ void application_init(void)
 
     // Send radio pairing request
     twr_radio_pairing_request("toi-project", FW_VERSION);
+
+    twr_rtc_get_datetime(&datetime);
+    twr_log_debug("$DATE: \"%d-%02d-%02dT%02d:%02d:%02dZ\"", datetime.tm_year + 1900, datetime.tm_mon, datetime.tm_mday, datetime.tm_hour, datetime.tm_min, datetime.tm_sec);
 }
