@@ -1,9 +1,6 @@
 target_sources(
     ${CMAKE_PROJECT_NAME}
     PUBLIC
-    network.c
-    network_data.c
-    network_data_params.c
     network_temperature.c
     network_temperature_data.c
     network_temperature_data_params.c

@@ -1,3 +1,6 @@
+add_subdirectory(model)
+add_subdirectory(AI)
+
 # List any additional sources here
 target_sources(
     ${CMAKE_PROJECT_NAME}
@@ -10,4 +13,6 @@ target_include_directories(
     ${CMAKE_PROJECT_NAME}
     PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
+    AI
+    model
 )
