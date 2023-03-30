@@ -158,8 +158,6 @@ void humidity_tag_event_handler(twr_tag_humidity_t *self, twr_tag_humidity_event
         float value;
         if (twr_tag_humidity_get_humidity_percentage(self, &value))
         {
-            lastHumidity = value;
-
             tag_humidity = value;
             twr_log_debug("HUMIDITY: %.2f", tag_humidity);
         }
@@ -173,8 +171,6 @@ void tmp112_event_handler(twr_tmp112_t *self, twr_tmp112_event_t event, void *ev
         float value;
         if (twr_tmp112_get_temperature_celsius(self, &value))
         {
-            lastTemperature = value;
-
             core_tmp112_value = value;
             twr_log_debug("TEMPERATURE: %.2f", core_tmp112_value);
         }
@@ -224,6 +220,10 @@ void send_data_task()
     snprintf(buffer, sizeof(buffer), "{\\\"temperature\\\":%.2f,\\\"humidity\\\":%.2f}", core_tmp112_value, tag_humidity);
     twr_log_debug("DATA: %s", buffer);
     twr_radio_pub_string("data", buffer);
+
+    lastHumidity = tag_humidity;
+    lastTemperature = core_tmp112_value;
+
     twr_scheduler_plan_current_relative(UPDATE_INTERVAL + 1000);
 }
 

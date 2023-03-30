@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    network_temperature.c
   * @author  AST Embedded Analytics Research Platform
-  * @date    Sun Mar 19 22:16:21 2023
+  * @date    Tue Mar 28 21:39:41 2023
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * @attention
@@ -35,14 +35,14 @@
 #define AI_NET_OBJ_INSTANCE g_network_temperature
  
 #undef AI_NETWORK_TEMPERATURE_MODEL_SIGNATURE
-#define AI_NETWORK_TEMPERATURE_MODEL_SIGNATURE     "10587899ab724cea35319705e68414fe"
+#define AI_NETWORK_TEMPERATURE_MODEL_SIGNATURE     "90f90d7c5ec7629444bbc276c618da72"
 
 #ifndef AI_TOOLS_REVISION_ID
 #define AI_TOOLS_REVISION_ID     ""
 #endif
 
 #undef AI_TOOLS_DATE_TIME
-#define AI_TOOLS_DATE_TIME   "Sun Mar 19 22:16:21 2023"
+#define AI_TOOLS_DATE_TIME   "Tue Mar 28 21:39:41 2023"
 
 #undef AI_TOOLS_COMPILE_TIME
 #define AI_TOOLS_COMPILE_TIME    __DATE__ " " __TIME__

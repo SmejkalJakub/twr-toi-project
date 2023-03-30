@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    network_humidity.c
   * @author  AST Embedded Analytics Research Platform
-  * @date    Sun Mar 19 22:16:27 2023
+  * @date    Tue Mar 28 21:39:36 2023
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * @attention
@@ -35,14 +35,14 @@
 #define AI_NET_OBJ_INSTANCE g_network_humidity
  
 #undef AI_NETWORK_HUMIDITY_MODEL_SIGNATURE
-#define AI_NETWORK_HUMIDITY_MODEL_SIGNATURE     "0fe332f1808ea494a63b161623297751"
+#define AI_NETWORK_HUMIDITY_MODEL_SIGNATURE     "837943f00a4da8ef8904c1efc9e66cf5"
 
 #ifndef AI_TOOLS_REVISION_ID
 #define AI_TOOLS_REVISION_ID     ""
 #endif
 
 #undef AI_TOOLS_DATE_TIME
-#define AI_TOOLS_DATE_TIME   "Sun Mar 19 22:16:27 2023"
+#define AI_TOOLS_DATE_TIME   "Tue Mar 28 21:39:36 2023"
 
 #undef AI_TOOLS_COMPILE_TIME
 #define AI_TOOLS_COMPILE_TIME    __DATE__ " " __TIME__
